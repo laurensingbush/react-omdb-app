@@ -12,8 +12,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(cors());
 
 // serve static files from React app
-app.use(express.static(path.join(__dirname, '../client/build')));
-
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 // respond with OMDb data by search query
 app.get('/api/search', async (req, res) => {
@@ -50,7 +49,7 @@ app.get('/api/id', async (req, res) => {
 
 // send back React's index.html file for requests that don't match above
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+    res.sendFile(path.join(__dirname, 'client/build/index.html'));
 })
 
 app.listen(PORT, () => {

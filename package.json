@@ -1,16 +1,18 @@
 {
   "name": "movie-tv-app",
   "version": "1.0.0",
-  "description": "A React app with an Express backend that allows users to search the OMDb database for movies and shows. A successful search query will display up to 10 results in each category. Each result will have an option to open up a modal for additional information as well as the ability to add and remove the item from their favorites list.",
+  "description": "A React app with an Express backend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/laurensingbush/react-omdb-app.git"
   },
-  "author": "",
+  "author": "Lauren Singbush",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/laurensingbush/react-omdb-app/issues"

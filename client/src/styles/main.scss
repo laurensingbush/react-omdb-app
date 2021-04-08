@@ -1,0 +1,22 @@
+/*
+*  Main SCSS
+*/
+
+// BASE
+@import './base/variables';
+@import './base/base';
+@import './base/mixins';
+
+// COMPONENTS
+@import './components/List';
+@import './components/ListHeading';
+@import './components/ListItemDetail';
+@import './components/Modal';
+@import './components/ModalContent';
+@import './components/Nav';
+@import './components/NotFound';
+@import './components/SearchBar';
+@import './components/Tooltip';
+
+// LAYOUT
+@import './layout/Pages';

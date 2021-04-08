@@ -1,0 +1,35 @@
+nav,
+hr,
+.items-row-favorites,
+.error-msg {
+  margin: 1rem 0.5rem;
+  @include tablet {
+    margin: 1rem 1rem;
+  }
+  @include desktop {
+    margin: 1rem 1.5rem;
+  }
+}
+
+.list-header,
+.list-header-loading {
+  h1 {
+    margin: 1rem 0 0 0.5rem;
+    @include tablet {
+      margin: 1rem 0 0 1rem;
+    }
+    @include desktop {
+      margin: 1rem 0 0 1.5rem;
+    }
+  }
+}
+
+/* Error message on home page */
+.error-msg {
+  font-size: 0.7rem;
+  text-align: center;
+  p {
+    display: inline-block;
+    text-align: left;
+  }
+}

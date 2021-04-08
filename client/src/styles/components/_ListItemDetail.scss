@@ -1,0 +1,50 @@
+// Item details for modal and poster overlay
+.detail-container-overlay,
+.detail-container-modal {
+  @include flexbox($flex-direction: column);
+  ul {
+    @include flexbox(
+      $justify-content: flex-start,
+      $align-items: center,
+      $flex-wrap: wrap
+    );
+    li {
+      margin-right: 0.3rem;
+    }
+  }
+  .detail-list-one {
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+    .item-rated {
+      font-size: 0.6rem;
+      border-radius: 1px;
+      background-color: $gray;
+      color: $white;
+      padding: 0.1em 0.3em;
+      @include tablet {
+        background-color: transparent;
+        border: 1px solid $gray;
+      }
+    }
+  }
+  .detail-list-two {
+    li {
+      font-size: 0.6rem;
+      border: 1px solid $gray;
+      border-radius: 3px;
+      padding: 0.1em 0.3em;
+      margin-bottom: 0.3rem;
+    }
+  }
+}
+.detail-container-overlay {
+  h2 {
+    font-size: 0.7rem;
+    font-weight: 400;
+    margin: 0 0 0.5rem 0;
+    color: $gray;
+  }
+  ul > li {
+    color: $white;
+  }
+}

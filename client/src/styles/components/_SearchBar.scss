@@ -1,0 +1,63 @@
+.search-form {
+  .visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+  }
+  .search-container {
+    position: relative;
+    input {
+      padding: 0.2rem 1.5rem;
+      border: 1px solid $white;
+      background-color: $black;
+      color: $white;
+      @include tablet {
+        padding: 0.4rem 1.7rem;
+        width: 15rem;
+        font-size: 0.8rem;
+        @include placeholder {
+          font-size: 0.8rem;
+        }
+      }
+      @include desktop {
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .search-icon,
+    .clear-icon {
+      font-size: 0.875rem;
+      position: absolute;
+      @include tablet {
+        font-size: 1rem;
+      }
+    }
+    .search-icon {
+      transform: translate(0, 35%);
+      left: 2%;
+      @include tablet {
+        transform: translate(0, 50%);
+      }
+      @include desktop {
+        transform: translate(0, 40%);
+      }
+    }
+    .clear-icon {
+      transform: translate(0, 20%);
+      right: -1%;
+      @include tablet {
+        transform: translate(0, 25%);
+        right: 0;
+      }
+      @include desktop {
+        right: 1%;
+      }
+    }
+  }
+}

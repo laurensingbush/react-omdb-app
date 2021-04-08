@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/server/node_modules
+/client/node_modules
 /.pnp
 .pnp.js
 
@@ -9,7 +11,16 @@
 /coverage
 
 # production
-/build
+/client/build
+/dist
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
 
 # misc
 .DS_Store

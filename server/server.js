@@ -1,4 +1,4 @@
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 const API_KEY = process.env.REACT_APP_OMDB_API_KEY;
 const PORT = process.env.PORT || 3080;
 const express = require('express');

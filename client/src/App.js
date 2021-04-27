@@ -35,7 +35,7 @@ const App = () => {
               setIsError({error: true, message: `Your search for "${searchValue}" did not have any matches.`});
             } 
             if (searchResponseJSON.Error === 'Too many results.') {
-              setIsError({error: true, message: `Your search for "${searchValue}" has too many matches. Try using a more specifc title.`});
+              setIsError({error: true, message: `Your search for "${searchValue}" has too many matches. Try using a more specific title.`});
             }
           } else {
             setIsError({error: false, message: ''});

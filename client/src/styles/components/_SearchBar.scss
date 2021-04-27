@@ -10,28 +10,34 @@
     width: 1px;
   }
   .search-container {
+    @include flexbox($align-items: center);
     position: relative;
     input {
       padding: 0.2rem 1.5rem;
       border: 1px solid $white;
       background-color: $black;
       color: $white;
+      font-size: 1rem;
+      width: 12rem;
       @include tablet {
-        padding: 0.4rem 1.7rem;
+        padding: 0.4rem 1.9rem;
         width: 15rem;
+        @include placeholder {
+          font-size: 1rem;
+        }
+      }
+      @include desktop {
         font-size: 0.8rem;
+        &:focus {
+          outline: none;
+        }
         @include placeholder {
           font-size: 0.8rem;
         }
       }
-      @include desktop {
-        &:focus {
-          outline: none;
-        }
-      }
     }
     .search-icon,
-    .clear-icon {
+    .clear-btn {
       font-size: 0.875rem;
       position: absolute;
       @include tablet {
@@ -39,25 +45,11 @@
       }
     }
     .search-icon {
-      transform: translate(0, 35%);
       left: 2%;
-      @include tablet {
-        transform: translate(0, 50%);
-      }
-      @include desktop {
-        transform: translate(0, 40%);
-      }
     }
-    .clear-icon {
-      transform: translate(0, 20%);
-      right: -1%;
-      @include tablet {
-        transform: translate(0, 25%);
-        right: 0;
-      }
-      @include desktop {
-        right: 1%;
-      }
+    .clear-btn {
+      @include flexbox($align-items: center);
+      right: 1%;
     }
   }
 }

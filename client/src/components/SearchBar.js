@@ -42,8 +42,8 @@ const SearchBar = ({ setSearchValue }) => {
                     autoComplete='off'
                 />
                 {input.length !== 0 && (
-                    <button onClick={clearInput} aria-label='clear input' className='clear-icon'>
-                        <BsXCircle color='white' />
+                    <button onClick={clearInput} aria-label='clear input' className='clear-btn'>
+                        <BsXCircle color='white' className='clear-icon' />
                     </button>
                 )}
             </div>

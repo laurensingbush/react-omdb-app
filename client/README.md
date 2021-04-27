@@ -1,4 +1,4 @@
-# IMDb Favorites
+# OMDb Search
 
 A React app that browses movies and tv shows to add to a favorites list
 

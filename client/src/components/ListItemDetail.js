@@ -1,17 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import convertTime from '../utils/convertTime';
 
-const ListItemDetail = ({ imdbItem, className}) => {
+const ListItemDetail = ({ imdbItem, className }) => {
     
     const checkSeasons = imdbItem.totalSeasons === '1' ? ' Season' : ' Seasons';
-
-    const convertTime = (min) => {
-        min = min.split(' ')[0];
-        const hours = Math.floor(min / 60);
-        const minutes = min % 60;
-        const format = hours === 0 ? `${minutes}m` : (minutes === 0 ? `${hours}h` : `${hours}h ${minutes}m`);
-        return format;
-    };
    
     return (
         <div className={`detail-container-${className}`} data-testid='listItemDetail'>

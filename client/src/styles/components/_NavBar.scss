@@ -1,0 +1,65 @@
+nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto;
+  align-items: center;
+  grid-row-gap: 1rem;
+  grid-template-areas:
+    'left-content right-content'
+    'searchbar searchbar';
+  .left-links {
+    @include flexbox($flex-direction: row);
+    grid-area: left-content;
+  }
+  .right-links {
+    @include flexbox($flex-direction: row, $justify-content: flex-end);
+    grid-area: right-content;
+    li > a {
+      color: $lightblue;
+    }
+  }
+  .nav-searchbar {
+    grid-area: searchbar;
+    width: 100%;
+  }
+  @include tablet {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas: 'left-content searchbar right-content';
+  }
+  ul {
+    li:nth-child(2) {
+      margin-left: 1rem;
+    }
+    li {
+      font-size: 1rem;
+      a {
+        color: $white;
+        transition: color 0.2s ease-in-out;
+        @include desktop {
+          &:hover {
+            color: $gray;
+          }
+        }
+      }
+      .user-circle {
+        @include flexbox($justify-content: center, $align-items: center);
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: $lightblue;
+        border-radius: 50%;
+        transition: box-shadow 0.2s ease-in-out;
+        @include desktop {
+          cursor: pointer;
+          &:hover {
+            box-shadow: 0 0 0 3px $lightgray;
+          }
+        }
+      }
+    }
+  }
+}
+
+hr {
+  border: none;
+  border: 1px solid $gray;
+}

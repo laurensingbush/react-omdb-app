@@ -1,0 +1,107 @@
+.register-form-container,
+.login-form-container {
+  border: 1px solid $lightgray;
+  border-radius: 5px;
+  padding: 0.5em 1.5em;
+  @include flexbox(
+    $justify-content: center,
+    $align-items: center,
+    $flex-direction: column
+  );
+  @include tablet {
+    width: 60%;
+    padding: 0.3em 3em;
+  }
+  @include desktop {
+    width: 40%;
+    font-size: 0.8rem;
+  }
+  form {
+    width: 100%;
+    .form-item {
+      @include flexbox($flex-direction: column);
+      margin-bottom: 0.5em;
+      label {
+        margin-bottom: 0.3em;
+      }
+      .required::after {
+        content: '\002A';
+        color: $red;
+        padding-left: 2px;
+      }
+      input {
+        font-size: 1rem;
+        background-color: $black;
+        color: $white;
+        border: 1px solid $lightgray;
+        border-radius: 5px;
+        padding: 0.5em;
+        @include placeholder {
+          color: transparent;
+        }
+        @include desktop {
+          font-size: 0.8rem;
+        }
+      }
+      .capitalize {
+        text-transform: capitalize;
+      }
+
+      .input-error {
+        border: 1px solid $red;
+      }
+      .input-error-feedback {
+        @include flexbox($align-items: flex-end);
+        color: transparent;
+        margin: 0;
+        font-size: 0.7em;
+        height: 1rem;
+      }
+      .show {
+        color: $red;
+        .error-icon {
+          font-size: 1.2em;
+          margin-right: 0.2em;
+        }
+      }
+
+      .password-input {
+        @include flexbox($flex-direction: row, $align-items: center);
+        position: relative;
+        input {
+          width: 100%;
+        }
+        button {
+          @include flexbox($align-items: center);
+          position: absolute;
+          right: 0;
+          color: $white;
+          font-size: 0.875em;
+          @include tablet {
+            font-size: 1em;
+          }
+        }
+      }
+      .submit-btn {
+        background-color: $lightblue;
+        border: 2px solid $lightblue;
+        padding: 0.5em 0;
+        border-radius: 5px;
+        margin: 0.5em 0;
+      }
+    }
+
+    .form-redirect {
+      margin-top: 1em;
+      @include flexbox(
+        $flex-direction: row,
+        $justify-content: center,
+        $align-items: flex-end
+      );
+      a {
+        margin-left: 0.5em;
+        color: $lightblue;
+      }
+    }
+  }
+}

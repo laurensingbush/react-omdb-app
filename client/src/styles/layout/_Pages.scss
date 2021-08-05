@@ -1,7 +1,8 @@
 nav,
 hr,
 .items-row-favorites,
-.error-msg {
+.error-msg,
+.not-auth-favorites-container {
   margin: 1rem 0.5rem;
   @include tablet {
     margin: 1rem 1rem;
@@ -24,6 +25,13 @@ hr,
   }
 }
 
+.register-form-container,
+.login-form-container {
+  margin: 1rem 0.5rem;
+  @include tablet {
+    margin: 0 auto;
+  }
+}
 /* Error message on home page */
 .error-msg {
   font-size: 0.7rem;

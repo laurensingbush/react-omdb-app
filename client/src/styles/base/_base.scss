@@ -46,9 +46,10 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  a {
-    text-decoration: none;
-  }
+}
+
+a {
+  text-decoration: none;
 }
 
 p {
@@ -63,6 +64,14 @@ button {
   border: none;
   @include desktop {
     cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+input {
+  @include desktop {
     &:focus {
       outline: none;
     }

@@ -24,10 +24,10 @@
   }
   @include tablet {
     @include flexbox($flex-direction: row);
-    padding: 4rem 1.5rem;
+    padding: 4rem 1.5rem 1rem 1.5rem;
   }
   @include desktop {
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.5rem 1rem 1.5rem;
     &::-webkit-scrollbar {
       width: 12px;
     }
@@ -52,7 +52,7 @@
     }
   }
   .modal-content {
-    @include flexbox($flex-direction: column);
+    @include flexbox($flex-direction: column, $flex: 0 0 auto);
     @include tablet {
       width: 55%;
     }
@@ -88,10 +88,6 @@
     }
     .modal-list {
       li {
-        margin-bottom: 0.5rem;
-        @include tablet {
-          margin-bottom: 1rem;
-        }
         h3 {
           font-size: 0.8rem;
           color: $gray;
@@ -103,6 +99,12 @@
           font-size: 0.7rem;
           color: $white;
           margin: 0;
+        }
+      }
+      li:not(.item-rating) {
+        margin-bottom: 0.5rem;
+        @include tablet {
+          margin-bottom: 1rem;
         }
       }
     }

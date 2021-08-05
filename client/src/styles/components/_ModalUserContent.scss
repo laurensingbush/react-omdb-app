@@ -1,0 +1,56 @@
+.modal-user-content-container {
+  @include flexbox(
+    $flex-direction: column,
+    $align-items: center,
+    $justify-content: flex-start
+  );
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  background-color: $hover-lightgray;
+  .user-circle {
+    @include flexbox($justify-content: center, $align-items: center);
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: $lightblue;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    p {
+      font-size: 1.5em;
+    }
+  }
+  .user-details {
+    //border: 1px solid red;
+    @include flexbox($flex-direction: column, $align-items: center);
+    margin-bottom: 1rem;
+    p {
+      margin: 0;
+    }
+    :first-child {
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    :last-child {
+      font-size: 0.8rem;
+    }
+  }
+  hr {
+    border: none;
+    border: 1px solid $gray;
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+  button {
+    //font-size: 0.75rem;
+    border: 1px solid $lightgray;
+    border-radius: 3px;
+    padding: 0.5em 1em;
+    color: $lightgray;
+    @include desktop {
+      font-size: 0.8rem;
+      &:hover {
+        background-color: $hover-lightgray;
+      }
+    }
+  }
+}

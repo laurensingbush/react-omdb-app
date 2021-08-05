@@ -5,7 +5,7 @@ import { BsXCircle } from 'react-icons/bs';
 
 const modalRoot = document.getElementById('modal-root');
 
-const Modal = forwardRef(({ children, initialValue = false }, ref) => {
+const Modal = forwardRef(({ children, initialValue = false, className }, ref) => {
     const [modalDisplay, openModal, closeModal] = useBoolean(initialValue);
 
     // expose methods to List
@@ -22,8 +22,10 @@ const Modal = forwardRef(({ children, initialValue = false }, ref) => {
     // listen for ESC keydown event and add blur class if modal is open
     useEffect(() => {
         if (modalDisplay) {
-            document.body.classList.add('modal-blur')
             document.addEventListener('keydown', handleEscape, false);
+            if (className === 'imdb-list') {
+                document.body.classList.add('modal-blur')
+            }
         }
         return () => {
             document.body.classList.remove('modal-blur')
@@ -33,9 +35,9 @@ const Modal = forwardRef(({ children, initialValue = false }, ref) => {
     
     return modalDisplay 
         ? createPortal(
-            <div className='modal-container' onClick={closeModal}>
-                <div className='modal' onClick={(e) => e.stopPropagation()}>
-                    <button onClick={closeModal} aria-label='close modal' >
+            <div className={`modal-container-${className}`} onClick={closeModal}>
+                <div className={`modal-${className}`} onClick={(e) => e.stopPropagation()}>
+                    <button className={`modal-btn-${className}`} onClick={closeModal} aria-label='close modal' >
                         <BsXCircle color='white' />
                     </button>
                     {children}

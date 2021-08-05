@@ -8,12 +8,15 @@
 @import './base/mixins';
 
 // COMPONENTS
+@import './components/AuthForms';
+@import './components/FavoritesPage';
 @import './components/List';
 @import './components/ListHeading';
 @import './components/ListItemDetail';
 @import './components/Modal';
-@import './components/ModalContent';
-@import './components/Nav';
+@import './components/ModalImdbContent';
+@import './components/ModalUserContent';
+@import './components/NavBar';
 @import './components/NotFound';
 @import './components/SearchBar';
 @import './components/Tooltip';

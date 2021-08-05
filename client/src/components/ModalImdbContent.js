@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import defaultPoster from '../assets/defaultPoster.png';
 import ListItemDetail from './ListItemDetail';
 
-const ModalContent = ({ imdbData }) => {
+const ModalImdbContent = ({ imdbData }) => {
 
     const checkGenre = imdbData.Genre.split(',').length === 1 ? 'Genre' : 'Genres';
 
@@ -51,8 +51,8 @@ const ModalContent = ({ imdbData }) => {
     );
 };
 
-ModalContent.propTypes = {
+ModalImdbContent.propTypes = {
     imdbData: PropTypes.object
 };
 
-export default ModalContent;
+export default ModalImdbContent;

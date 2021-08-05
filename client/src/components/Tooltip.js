@@ -1,30 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useBoolean } from '../hooks/useBoolean';
 import PropTypes from 'prop-types';
 
 const Tooltip = (props) => {
-    let timeout;
     const [isActive, toggleShow, toggleHide] = useBoolean(false);
 
-    const showTooltip = () => {
-        timeout = setTimeout(() => {
-            toggleShow();
-        }, 400);
-    };
+    useEffect(() => {
+        // show tooltip after 400ms
+        const timeout = isActive && setTimeout(() => { toggleShow() }, 400);
 
-    const hideTooltip = () => {
-        clearInterval(timeout);
-        toggleHide();
-    };
+        return () => {
+            clearTimeout(timeout);
+        }
+    }, [isActive]);
 
     return (
-        <div className='tooltip-container' onMouseEnter={showTooltip} onMouseLeave={hideTooltip} >
+        <div className='tooltip-container' onMouseEnter={toggleShow} onMouseLeave={toggleHide} >
             {props.children}
             {isActive && props.type === 'favorite' && (
                 <div className='tooltip-content'>
-                    {props.favorites.some((favorite) => favorite.imdbID === props.imdbItemID) 
-                        ? 'Remove from Favorites' 
-                        : 'Add to Favorites'
+                    {!props.isFavorited
+                        ? 'Add to Favorites'
+                        : 'Remove from Favorites' 
                     }
                 </div>
             )}
@@ -40,7 +37,7 @@ const Tooltip = (props) => {
 Tooltip.propTypes = {
     type: PropTypes.string,
     imdbItemID: PropTypes.string,
-    favorites: PropTypes.array
+    isFavorited: PropTypes.bool
 };
 
 export default Tooltip;

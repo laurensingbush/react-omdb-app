@@ -10,6 +10,7 @@ const FavoriteButton = ({ imdbItem }) => {
     const { checkFavorited, isFavorited, addFavorite, removeFavorite } = useFavorites();
     const imdbData = {
         imdbID: imdbItem.imdbID,
+        Type: imdbItem.Type,
         Title: imdbItem.Title,
         Poster: imdbItem.Poster,
         Plot: imdbItem.Plot,

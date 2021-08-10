@@ -9,6 +9,7 @@ const favoriteSchema = mongoose.Schema({
     imdbDetails: 
         {
             imdbID: String,
+            Type: String,
             Poster: String,
             Title: String,
             Plot: String,

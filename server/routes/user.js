@@ -45,7 +45,7 @@ router.post('/login', async (req, res) => {
             } else {
                 await user.generateToken();
                 res
-                    .cookie('token', user.token)
+                    .cookie('token', user.token, { httpOnly: true, secure: true, maxAge: 60 * 60 * 24 })
                     .status(200)
                     .json({success: true, userId: user._id});
             }
